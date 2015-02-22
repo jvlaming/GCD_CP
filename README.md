@@ -14,6 +14,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 This script uses the following package(s):
 - dplyr : install.packages("dplyr")
 - tidyr : install.packages("tidyr")
+
 The script will test for the relevant libraries to be installed and , if not, tries to install them.
 
 ##Get started:
