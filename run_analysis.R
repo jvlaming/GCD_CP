@@ -10,9 +10,15 @@
     # remove all existing stuff from memory
     rm(list=ls())
 
-    # load the required libraries
-    library(dplyr) 
-    library(tidyr)
+    # Test for and load the required libraries
+    # Check whether package is already installed, if not; install
+    if (!require(dplyr)){
+        install.packages("dplyr")  
+    }
+    if (!require(tidyr)){
+        install.packages("tidyr")  
+    }
+
 
     
 # 1. Merges the training and the test sets to create one data set. 
@@ -75,16 +81,16 @@
     
     # tidy the column names: 
     # Remove non-alfabet characters : 1) remove - (dashes), 2) remove () (brackets), 
-#    cols_sub_names <- gsub("-","",cols_sub_names)        # 1) use gsub to replace all occurences
-#    cols_sub_names <- sub("\\(\\)","",cols_sub_names)    # 2)
+    cols_sub_names <- gsub("-","",cols_sub_names)        # 1) use gsub to replace all occurences
+    cols_sub_names <- sub("\\(\\)","",cols_sub_names)    # 2)
     # Camel-case the variable names
     # 3) change mean to Mean and 4) std to Std
-#    cols_sub_names <- sub("mean","Mean",cols_sub_names)  # 3)
-#    cols_sub_names <- sub("std","Std",cols_sub_names)    # 4)
+    cols_sub_names <- sub("mean","Mean",cols_sub_names)  # 3)
+    cols_sub_names <- sub("std","Std",cols_sub_names)    # 4)
     # Clarify the pre-fixes t and f
     # 5) change t to Time and 6) change f to Freq
-#    cols_sub_names <- sub("^t","Time",cols_sub_names)    # 5)
-#    cols_sub_names <- sub("^f","Freq",cols_sub_names)    # 6)
+    cols_sub_names <- sub("^t","Time",cols_sub_names)    # 5)
+    cols_sub_names <- sub("^f","Freq",cols_sub_names)    # 6)
     
     # set the tidy df_merge column names
     colnames(df_merge) <- c("activity", "subject", cols_sub_names)
@@ -94,24 +100,26 @@
     # summarize the columns in df_merge. Take mean and group by subject and activity
     # note: set the column names for the 'group by' fields explicitly otherwise these will default to Group.1, Group.2 etc
     
-    # this is the WIDE format: each original measurement variable hs its own column
+    # this is the WIDE format: each original measurement variable has its own column
     df_mean_wide <- aggregate(x=df_merge[3:68], by=list(subject = df_merge$subject, activity=df_merge$activity), FUN=mean)
     
     # convert to a tidier format with 4 columns: subject and activity as-is; 
     # column measurement contains the original measurement variable name; 
     # column average_value is the average for that measurement over subject and activity
-    df_mean_tall <- gather(df_mean_wide, measurement, average_value, -subject, -activity) 
+    df_mean_long <- gather(df_mean_wide, measurement, average_value, -subject, -activity) 
     
     
 
 # write results to file for verifications
     # note: set row.name=FALSE otherwise extra column will be written at start of file
+    # long tidy format
+    write.table(df_mean_long, "merged_mean_long.txt", row.name=FALSE)
+    
     
     # wide format set
-    write.table(df_mean_wide, "merged_mean_wide.txt", row.name=FALSE)
+    # do not write to file; this line just for debugging purposes
+    # write.table(df_mean_wide, "merged_mean_wide.txt", row.name=FALSE) 
     
-    # narrow tidy format
-    write.table(df_mean_tall, "merged_mean_tall.txt", row.name=FALSE)
     
     
     # end of script

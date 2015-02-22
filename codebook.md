@@ -1,8 +1,8 @@
-#Codebook for "merged_set_mean.txt"
+#Codebook for "merged_mean_long.txt"
 
 this codebook goes with the run_analysis.R script and a README.md file.
 
-This set contains 86 variables and 180 records
+This set contains 11880 obs. of  4 variables:
 
 For a description of the variables in the original data set, see files feature_info.txt and features.txt from file https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -26,80 +26,49 @@ The exact steps take to get to this data set are detailed in the README.md file
 ##Data dictionary
 
 "1" "activity" 
-Factor w/ 6 levels LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS 
+Type: Factor w/ 6 levels LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS 
+Explanation: One of six different activities for which measurements are taken.
 
 "2" "subject"
-Integer 1..30 to identify the subject (test person) of the study
+Type: Integer 1..30 
+Explanation: id number to identify the subject (test person) of the study. Labels unknown.
 
-"3" "TimeBodyAccMeanX": Mean for variable tBodyAcc-mean()-X: range [-1..1]
-"4" "TimeBodyAccMeanY": Mean for variable tBodyAcc-mean()-Y: range [-1..1]
-"5" "TimeBodyAccMeanZ": Mean for variable tBodyAcc-mean()-Z: range [-1..1]
-"6" "TimeBodyAccStdX": Mean for variable tBodyAcc-std()-X: range [-1..1]
-"7" "TimeBodyAccStdY": Mean for variable tBodyAcc-std()-Y: range [-1..1]
-"8" "TimeBodyAccStdZ": Mean for variable tBodyAcc-std()-Z: range [-1..1]
-"9" "TimeGravityAccMeanX": Mean for variable tGravityAcc-mean()-X: range [-1..1]
-"10" "TimeGravityAccMeanY": Mean for variable tGravityAcc-mean()-Y: range [-1..1]
-"11" "TimeGravityAccMeanZ": Mean for variable tGravityAcc-mean()-Z: range [-1..1]
-"12" "TimeGravityAccStdX": Mean for variable tGravityAcc-std()-X: range [-1..1]
-"13" "TimeGravityAccStdY": Mean for variable tGravityAcc-std()-Y: range [-1..1]
-"14" "TimeGravityAccStdZ": Mean for variable tGravityAcc-std()-Z: range [-1..1]
-"15" "TimeBodyAccJerkMeanX"
-"16" "TimeBodyAccJerkMeanY"
-"17" "TimeBodyAccJerkMeanZ"
-"18" "TimeBodyAccJerkStdX"
-"19" "TimeBodyAccJerkStdY"
-"20" "TimeBodyAccJerkStdZ"
-"21" "TimeBodyGyroMeanX"
-"22" "TimeBodyGyroMeanY"
-"23" "TimeBodyGyroMeanZ"
-"24" "TimeBodyGyroStdX"
-"25" "TimeBodyGyroStdY"
-"26" "TimeBodyGyroStdZ"
-"27" "TimeBodyGyroJerkMeanX"
-"28" "TimeBodyGyroJerkMeanY"
-"29" "TimeBodyGyroJerkMeanZ"
-"30" "TimeBodyGyroJerkStdX"
-"31" "TimeBodyGyroJerkStdY"
-"32" "TimeBodyGyroJerkStdZ"
-"33" "TimeBodyAccMagMean"
-"34" "TimeBodyAccMagStd"
-"35" "TimeGravityAccMagMean"
-"36" "TimeGravityAccMagStd"
-"37" "TimeBodyAccJerkMagMean"
-"38" "TimeBodyAccJerkMagStd"
-"39" "TimeBodyGyroMagMean"
-"40" "TimeBodyGyroMagStd"
-"41" "TimeBodyGyroJerkMagMean"
-"42" "TimeBodyGyroJerkMagStd"
-"43" "FreqBodyAccMeanX"
-"44" "FreqBodyAccMeanY"
-"45" "FreqBodyAccMeanZ"
-"46" "FreqBodyAccStdX"
-"47" "FreqBodyAccStdY"
-"48" "FreqBodyAccStdZ"
-"49" "FreqBodyAccJerkMeanX"
-"50" "FreqBodyAccJerkMeanY"
-"51" "FreqBodyAccJerkMeanZ"
-"52" "FreqBodyAccJerkStdX"
-"53" "FreqBodyAccJerkStdY"
-"54" "FreqBodyAccJerkStdZ"
-"55" "FreqBodyGyroMeanX"
-"56" "FreqBodyGyroMeanY"
-"57" "FreqBodyGyroMeanZ"
-"58" "FreqBodyGyroStdX"
-"59" "FreqBodyGyroStdY"
-"60" "FreqBodyGyroStdZ"
-"61" "FreqBodyAccMagMean"
-"62" "FreqBodyAccMagStd"
-"63" "FreqBodyBodyAccJerkMagMean"
-"64" "FreqBodyBodyAccJerkMagStd"
-"65" "FreqBodyBodyGyroMagMean"
-"66" "FreqBodyBodyGyroMagStd"
-"67" "FreqBodyBodyGyroJerkMagMean"
-"68" "FreqBodyBodyGyroJerkMagStd"
+"3" "measurement"
+Type: Factor w/ 66 Levels: TimeBodyAccMeanX TimeBodyAccMeanY TimeBodyAccMeanZ TimeBodyAccStdX TimeBodyAccStdY ... FreqBodyBodyGyroJerkMagStd
+Actual values: 
+ TimeBodyAccMeanX            TimeBodyAccMeanY            TimeBodyAccMeanZ            TimeBodyAccStdX            
+ TimeBodyAccStdY             TimeBodyAccStdZ             TimeGravityAccMeanX         TimeGravityAccMeanY        
+ TimeGravityAccMeanZ         TimeGravityAccStdX          TimeGravityAccStdY          TimeGravityAccStdZ         
+ TimeBodyAccJerkMeanX        TimeBodyAccJerkMeanY        TimeBodyAccJerkMeanZ        TimeBodyAccJerkStdX        
+ TimeBodyAccJerkStdY         TimeBodyAccJerkStdZ         TimeBodyGyroMeanX           TimeBodyGyroMeanY          
+ TimeBodyGyroMeanZ           TimeBodyGyroStdX            TimeBodyGyroStdY            TimeBodyGyroStdZ           
+ TimeBodyGyroJerkMeanX       TimeBodyGyroJerkMeanY       TimeBodyGyroJerkMeanZ       TimeBodyGyroJerkStdX       
+ TimeBodyGyroJerkStdY        TimeBodyGyroJerkStdZ        TimeBodyAccMagMean          TimeBodyAccMagStd          
+ TimeGravityAccMagMean       TimeGravityAccMagStd        TimeBodyAccJerkMagMean      TimeBodyAccJerkMagStd      
+ TimeBodyGyroMagMean         TimeBodyGyroMagStd          TimeBodyGyroJerkMagMean     TimeBodyGyroJerkMagStd     
+ FreqBodyAccMeanX            FreqBodyAccMeanY            FreqBodyAccMeanZ            FreqBodyAccStdX            
+ FreqBodyAccStdY             FreqBodyAccStdZ             FreqBodyAccJerkMeanX        FreqBodyAccJerkMeanY       
+ FreqBodyAccJerkMeanZ        FreqBodyAccJerkStdX         FreqBodyAccJerkStdY         FreqBodyAccJerkStdZ        
+ FreqBodyGyroMeanX           FreqBodyGyroMeanY           FreqBodyGyroMeanZ           FreqBodyGyroStdX           
+ FreqBodyGyroStdY            FreqBodyGyroStdZ            FreqBodyAccMagMean          FreqBodyAccMagStd          
+ FreqBodyBodyAccJerkMagMean  FreqBodyBodyAccJerkMagStd   FreqBodyBodyGyroMagMean     FreqBodyBodyGyroMagStd     
+ FreqBodyBodyGyroJerkMagMean FreqBodyBodyGyroJerkMagStd 
+
+Explanation: 
+	- The values for Measurement are derived from the original measurement variable names as provided in (source files) features_info.txt and features.txt.
+	Part of features_info.txt is echoed at the bottom of this codebook.
+	- The orginal Measurement variable names are tidied up for better readability as descrivbed in step 5) above.
+ 
+ 
+"4" "average_value"
+Type: Numeric -0.99767 .. 0.97451 
+Explanation: The Calculated average for each group of subject x activity x measurement
+
+-- end of data dictionary --
 
 
-# From the description of the source data set
+
+# From the description of the source data set in file "features_info.txt"
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -135,3 +104,4 @@ std(): Standard deviation
 
 
  -- end of file --
+ 
