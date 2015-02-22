@@ -25,16 +25,19 @@ The exact steps take to get to this data set are detailed in the README.md file
 
 ##Data dictionary
 
-"1" "activity" 
+###1 "activity"
 Type: Factor w/ 6 levels LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS 
+
 Explanation: One of six different activities for which measurements are taken.
 
-"2" "subject"
+###2 "subject"
 Type: Integer 1..30 
+
 Explanation: id number to identify the subject (test person) of the study. Labels unknown.
 
-"3" "measurement"
+###3 "measurement"
 Type: Factor w/ 66 Levels: TimeBodyAccMeanX TimeBodyAccMeanY TimeBodyAccMeanZ TimeBodyAccStdX TimeBodyAccStdY ... FreqBodyBodyGyroJerkMagStd
+
 Actual values: 
  TimeBodyAccMeanX            TimeBodyAccMeanY            TimeBodyAccMeanZ            TimeBodyAccStdX            
  TimeBodyAccStdY             TimeBodyAccStdZ             TimeGravityAccMeanX         TimeGravityAccMeanY        
@@ -55,13 +58,13 @@ Actual values:
  FreqBodyBodyGyroJerkMagMean FreqBodyBodyGyroJerkMagStd 
 
 Explanation: 
-	- The values for Measurement are derived from the original measurement variable names as provided in (source files) features_info.txt and features.txt.
-	Part of features_info.txt is echoed at the bottom of this codebook.
-	- The orginal Measurement variable names are tidied up for better readability as descrivbed in step 5) above.
+- The values for Measurement are derived from the original measurement variable names as provided in (source files) features_info.txt and features.txt. Part of features_info.txt is echoed at the bottom of this codebook.
+- The orginal Measurement variable names are tidied up for better readability as descrivbed in step 5) above.
  
  
-"4" "average_value"
-Type: Numeric -0.99767 .. 0.97451 
+###4 "average_value"
+Type: Numeric -0.99767 .. 0.97451
+
 Explanation: The Calculated average for each group of subject x activity x measurement
 
 -- end of data dictionary --
